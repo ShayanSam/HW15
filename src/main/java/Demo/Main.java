@@ -50,10 +50,7 @@ public class Main {
             teacher.setStudents(students);
             teacherDao.save(teacher);
             studentDao.save(student);
-            System.out.println(teacherDao.load(1L));
-            System.out.println(studentDao.load(1L));
-            System.out.println(addressDao.load(22L));
-            System.out.println(addressDao.load(23L));
+
 
             entityTransaction.commit();
 
