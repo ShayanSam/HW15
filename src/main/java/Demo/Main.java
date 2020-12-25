@@ -34,27 +34,26 @@ public class Main {
             StudentDao studentDao = new StudentDao(entityManager);
             TeacherDao teacherDao = new TeacherDao(entityManager);
             AddressDao addressDao = new AddressDao(entityManager);
-            Student student = new Student("Shayan","Sam","HG23", LocalDate.of(1986,12,6));
-            Teacher teacher = new Teacher("mark","Helmark","Jk76",2000.00,LocalDate.of(1967,6,16));
-            Address address = new Address(22L,"09765768434","VA","TH","1000-76-54","8776544354");
-            Address address2 = new Address(23L,"09767868434","CA","TX","1099-56-64","8748934564");
+            Student student = new Student("Shayan","Sam","AB78", LocalDate.of(1966,12,6));
+            Teacher teacher = new Teacher("James","Baily","KJ876",2000.00,LocalDate.of(1977,6,16));
+            Address address = new Address("3459890987","NA","TH","177-76-54","8788876543");
+            Address address2 = new Address("13452345544","CA","TX","1779-56-64","9809887987");
             Set<Address> addresses = new HashSet<>();
             Set<Student> students = new HashSet<>();
-//            addresses.add(address);
-//            students.add(student);
-//            student.setAddresses(addresses);
-//            teacher.setAddress(address2);
-//            teacher.setStudents(students);
-//            teacherDao.save(teacher);
-//            studentDao.save(student);
-//            System.out.println(teacherDao.load(1L));
-//            System.out.println(studentDao.load(1L));
-//            System.out.println(addressDao.load(22L));
-//            System.out.println(addressDao.load(23L));
 
 
 
-
+            addresses.add(address);
+            students.add(student);
+            student.setAddresses(addresses);
+            teacher.setAddress(address2);
+            teacher.setStudents(students);
+            teacherDao.save(teacher);
+            studentDao.save(student);
+            System.out.println(teacherDao.load(1L));
+            System.out.println(studentDao.load(1L));
+            System.out.println(addressDao.load(22L));
+            System.out.println(addressDao.load(23L));
 
             entityTransaction.commit();
 

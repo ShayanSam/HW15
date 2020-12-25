@@ -12,7 +12,7 @@ import javax.persistence.*;
 public class Address {
 
     @Id
-    @NonNull
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "address_id",unique = true,nullable = false)
     private Long id;
 
